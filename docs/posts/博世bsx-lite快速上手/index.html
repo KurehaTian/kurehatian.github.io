@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>博世BSX-Lite快速上手 - 资讯统合思念体终端</title><meta name="Description" content=""><meta property="og:title" content="博世BSX-Lite快速上手" />
+<meta property="og:description" content="博世BSX-Lite快速上手 零、引言BSX-Lite是博世推出的一款轻量级姿态解算库，可以较为便捷的进行六轴姿态解算，效果还是很不错的。 BS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-06T00:50:22+08:00" />
+<meta property="article:modified_time" content="2023-06-06T00:50:22+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="博世BSX-Lite快速上手"/>
+<meta name="twitter:description" content="博世BSX-Lite快速上手 零、引言BSX-Lite是博世推出的一款轻量级姿态解算库，可以较为便捷的进行六轴姿态解算，效果还是很不错的。 BS"/>
+<meta name="application-name" content="资讯统合思念体终端">
+<meta name="apple-mobile-web-app-title" content="资讯统合思念体终端">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" /><link rel="prev" href="http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "博世BSX-Lite快速上手",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B\/"
+        },"genre": "posts","keywords": "IMU, 惯性导航, 第三方工具","wordcount":  937 ,
+        "url": "http:\/\/example.org\/posts\/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B\/","datePublished": "2023-06-06T00:50:22+08:00","dateModified": "2023-06-06T00:50:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.2.0" defer type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+</head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="资讯统合思念体终端">资讯统合思念体终端</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="资讯统合思念体终端">资讯统合思念体终端</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">博世BSX-Lite快速上手</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">作者</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/"><i class="far fa-folder fa-fw"></i>第三方工具</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-06-06">2023-06-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-06-06">2023-06-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 937 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="content" id="content"><h1 id="博世bsx-lite快速上手" class="headerLink">
+    <a href="#%e5%8d%9a%e4%b8%96bsx-lite%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b" class="header-mark"></a>博世BSX-Lite快速上手</h1><h2 id="零引言" class="headerLink">
+    <a href="#%e9%9b%b6%e5%bc%95%e8%a8%80" class="header-mark"></a>零、引言</h2><p>BSX-Lite是博世推出的一款轻量级姿态解算库，可以较为便捷的进行六轴姿态解算，效果还是很不错的。</p>
+<p>BSX-Lite进行运算时，只需提供三轴加速度和、三轴角速度与时间戳即可。</p>
+<p>截至本文成文，这套库只适用于Arm架构，Armcc编译器。</p>
+<h2 id="一引入文件" class="headerLink">
+    <a href="#%e4%b8%80%e5%bc%95%e5%85%a5%e6%96%87%e4%bb%b6" class="header-mark"></a>一、引入文件</h2><p>官方链接：https://www.bosch-sensortec.com/software-tools/software/sensor-fusion-software/</p>
+<p>以v1.0.2为例，库的压缩包文件结构为：</p>
+<pre tabindex="0"><code>[Generic]BSXlite_v1.0.2
+    |-documentation
+    |   |-Integration_guide.pdf                    #参考手册
+    |- example                                     #示例文件
+    |   |-bsxlite_integration_example.c
+    |   |-file_operations.c
+    |   |-file_operations.h
+    |   |-shortLog_bsxlite.txt
+    |-lib                                          #静态库
+    |   |-ARMCC_OUT
+    |       |-libalgobsxm0
+    |       |-libalgobsxm0plus
+    |       |-libalgobsxm1
+    |       |-libalgobsxm3
+    |       |-libalgobsxm4
+    |       |-libalgobsxm4fpu
+    |       |-libalgobsxm7
+    |           （这7个文件夹中都包含）
+    |           |-libalgobsx.lib
+    |           |-memory_footprint.txt
+    |-releasenotes
+    |   |-Customer_Release Notes.docx
+    |-bsxlite_interface.h                          #接口
+</code></pre><p>以Keil编译器，RT1064(Cortex M7)为例。
+我们需要将 <em>bsxlite_interface.h</em> 和<em>libalgobsx.lib</em>引入到项目中去，记得include path中也需要添加。</p>
+<p>(p.s.)<em>libalgobsx.lib</em>要看你的内核版本，比方说我用的M7的核，所以选文件就选libalgobsxm7\libalgobsx.lib</p>
+<h2 id="二移植" class="headerLink">
+    <a href="#%e4%ba%8c%e7%a7%bb%e6%a4%8d" class="header-mark"></a>二、移植</h2><p>强烈建议开始这一步之前先粗读一下手册或者看一下<em>bsxlite_interface.h</em>。</p>
+<h3 id="时间戳" class="headerLink">
+    <a href="#%e6%97%b6%e9%97%b4%e6%88%b3" class="header-mark"></a>时间戳</h3><p>你需要开一个int32类型的全局变量以存储当前时间，单位为微秒。
+放在定时器中，在调用陀螺仪之前更新即可。</p>
+<h3 id="获取数据" class="headerLink">
+    <a href="#%e8%8e%b7%e5%8f%96%e6%95%b0%e6%8d%ae" class="header-mark"></a>获取数据</h3><p>从你的陀螺仪中读取数据，并将加速度单位转为m/s^2,角速度单位转为rad/s。</p>
+<h3 id="建立结构体" class="headerLink">
+    <a href="#%e5%bb%ba%e7%ab%8b%e7%bb%93%e6%9e%84%e4%bd%93" class="header-mark"></a>建立结构体</h3><p>bsxlite提供了几种基本的结构体类型，我们需要定义：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bsxlite_instance_t</td>
+<td>传感器实例</td>
+</tr>
+<tr>
+<td>vector_3d_t</td>
+<td>加速度向量</td>
+</tr>
+<tr>
+<td>vector_3d_t</td>
+<td>角速度向量</td>
+</tr>
+<tr>
+<td>bsxlite_out_t</td>
+<td>存储输出结果</td>
+</tr>
+</tbody>
+</table>
+<p>注意这些变量的定义域。</p>
+<h3 id="初始化" class="headerLink">
+    <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96" class="header-mark"></a>初始化</h3><p>调用*bsxlite_init(bsxlite_instance_t *传感器实例)*函数。</p>
+<h3 id="传入数据" class="headerLink">
+    <a href="#%e4%bc%a0%e5%85%a5%e6%95%b0%e6%8d%ae" class="header-mark"></a>传入数据</h3><p>将以弧度、m/s^2为单位的原始数据存入加速度向量、角速度向量结构体中，下一步备用。</p>
+<h3 id="计算" class="headerLink">
+    <a href="#%e8%ae%a1%e7%ae%97" class="header-mark"></a>计算</h3><p>调用 <em>bsxlite_do_step(&amp;传感器实例,微秒时间戳,&amp;加速度输入向量,&amp;角速度输入向量,&amp;输出结果结构体)</em> 函数。
+注意计算更新频率最大只能是100Hz。</p>
+<h3 id="取结果" class="headerLink">
+    <a href="#%e5%8f%96%e7%bb%93%e6%9e%9c" class="header-mark"></a>取结果</h3><p>之前计算的结果存储在<em>bsxlite_out_t</em>类型的结构体中，其中<em>orientation</em>是欧拉角输出，单位是弧度。</p>
+</div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-06-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/imu/">IMU</a>,&nbsp;<a href="/tags/%E6%83%AF%E6%80%A7%E5%AF%BC%E8%88%AA/">惯性导航</a>,&nbsp;<a href="/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">第三方工具</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" class="prev" rel="prev" title="Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目"><i class="fas fa-angle-left fa-fw"></i>Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目</a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.113.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

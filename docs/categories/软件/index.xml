@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>软件 - 分类 - 资讯统合思念体终端</title>
+        <link>http://example.org/categories/%E8%BD%AF%E4%BB%B6/</link>
+        <description>软件 - 分类 - 资讯统合思念体终端</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 01 Jun 2023 00:50:22 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E8%BD%AF%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
+    <title>Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目</title>
+    <link>http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</link>
+    <pubDate>Thu, 01 Jun 2023 00:50:22 &#43;0800</pubDate><author>
+        <name>作者</name>
+    </author><guid>http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</guid>
+    <description><![CDATA[地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： 定时器、PWM、ADC、SPI、CAN 设备]]></description>
+</item></channel>
+</rss>

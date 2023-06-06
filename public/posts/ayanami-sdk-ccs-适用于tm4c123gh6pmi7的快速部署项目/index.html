@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目 - 资讯统合思念体终端</title><meta name="Description" content=""><meta property="og:title" content="Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目" />
+<meta property="og:description" content="地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： 定时器、PWM、ADC、SPI、CAN 设备" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-01T00:50:22+08:00" />
+<meta property="article:modified_time" content="2023-06-01T00:50:22+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目"/>
+<meta name="twitter:description" content="地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： 定时器、PWM、ADC、SPI、CAN 设备"/>
+<meta name="application-name" content="资讯统合思念体终端">
+<meta name="apple-mobile-web-app-title" content="资讯统合思念体终端">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" /><link rel="prev" href="http://example.org/posts/xtepper-%E4%B8%80%E4%B8%AA%E9%AB%98%E9%9B%86%E6%88%90%E5%BA%A6%E7%9A%84%E9%97%AD%E7%8E%AF%E6%AD%A5%E8%BF%9B%E9%A9%B1%E5%8A%A8/" /><link rel="next" href="http://example.org/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE\/"
+        },"genre": "posts","keywords": "SDK, TM4C123, CCS","wordcount":  190 ,
+        "url": "http:\/\/example.org\/posts\/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE\/","datePublished": "2023-06-01T00:50:22+08:00","dateModified": "2023-06-01T00:50:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.2.0" defer type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+</head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="资讯统合思念体终端">资讯统合思念体终端</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="资讯统合思念体终端">资讯统合思念体终端</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">作者</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E5%81%9A%E7%82%B9%E4%B8%9C%E8%A5%BF/"><i class="far fa-folder fa-fw"></i>做点东西</a>&nbsp;<a href="/categories/%E8%BD%AF%E4%BB%B6/"><i class="far fa-folder fa-fw"></i>软件</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 190 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>地址: <a href="https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master</a></p>
+<h2 id="简介" class="headerLink">
+    <a href="#%e7%ae%80%e4%bb%8b" class="header-mark"></a>简介</h2><p>目前仍处于开发阶段(约10%)。最新内容参见develop分支。</p>
+<h2 id="计划内的更新" class="headerLink">
+    <a href="#%e8%ae%a1%e5%88%92%e5%86%85%e7%9a%84%e6%9b%b4%e6%96%b0" class="header-mark"></a>计划内的更新</h2><pre tabindex="0"><code>    
+    片内外设：      定时器、PWM、ADC、SPI、CAN
+
+    设备：          IMU、IPS/OLED/LCD、xTepper、直流有刷驱动、HMC5883罗盘、AHT10温湿度传感器、按键、SD卡
+
+    软件中间层：    四叉树优化的双缓冲显存、二轮驱动的里程计、AHRS、虚拟屏幕()
+</code></pre><h2 id="日志" class="headerLink">
+    <a href="#%e6%97%a5%e5%bf%97" class="header-mark"></a>日志</h2><blockquote>
+<p>[D][2023.4.1] GPIO部分完成。</p>
+<p>[D][2023.5.27] I2C部分完成。</p>
+</blockquote>
+</div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-06-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/sdk/">SDK</a>,&nbsp;<a href="/tags/tm4c123/">TM4C123</a>,&nbsp;<a href="/tags/ccs/">CCS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/xtepper-%E4%B8%80%E4%B8%AA%E9%AB%98%E9%9B%86%E6%88%90%E5%BA%A6%E7%9A%84%E9%97%AD%E7%8E%AF%E6%AD%A5%E8%BF%9B%E9%A9%B1%E5%8A%A8/" class="prev" rel="prev" title="xTepper - 一个高集成度的闭环步进驱动"><i class="fas fa-angle-left fa-fw"></i>xTepper - 一个高集成度的闭环步进驱动</a>
+            <a href="/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" class="next" rel="next" title="博世BSX-Lite快速上手">博世BSX-Lite快速上手<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.113.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title>Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目 - 资讯统合思念体终端</title><meta name="Description" content=""><meta property="og:title" content="Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目" />
-<meta property="og:description" content="地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： 定时器、PWM、ADC、SPI、CAN 设备" />
+<meta property="og:description" content="地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： PWM、ADC、SPI、CAN 设备： IMU" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-06-01T00:50:22+08:00" />
 <meta property="article:modified_time" content="2023-06-01T00:50:22+08:00" /><meta property="og:site_name" content="资讯统合思念体终端" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ayanami-SDK-CCS - 适用于TM4C123GH6PMI7的快速部署项目"/>
-<meta name="twitter:description" content="地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： 定时器、PWM、ADC、SPI、CAN 设备"/>
+<meta name="twitter:description" content="地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： PWM、ADC、SPI、CAN 设备： IMU"/>
 <meta name="application-name" content="资讯统合思念体终端">
 <meta name="apple-mobile-web-app-title" content="资讯统合思念体终端">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" /><link rel="prev" href="http://example.org/posts/xtepper-%E4%B8%80%E4%B8%AA%E9%AB%98%E9%9B%86%E6%88%90%E5%BA%A6%E7%9A%84%E9%97%AD%E7%8E%AF%E6%AD%A5%E8%BF%9B%E9%A9%B1%E5%8A%A8/" /><link rel="next" href="http://example.org/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" /><link rel="prev" href="http://example.org/posts/xtepper-%E4%B8%80%E4%B8%AA%E9%AB%98%E9%9B%86%E6%88%90%E5%BA%A6%E7%9A%84%E9%97%AD%E7%8E%AF%E6%AD%A5%E8%BF%9B%E9%A9%B1%E5%8A%A8/" />
 <link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE\/"
-        },"genre": "posts","keywords": "SDK, TM4C123, CCS","wordcount":  190 ,
+        },"genre": "posts","keywords": "SDK, TM4C123, CCS","wordcount":  195 ,
         "url": "http:\/\/example.org\/posts\/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE\/","datePublished": "2023-06-01T00:50:22+08:00","dateModified": "2023-06-01T00:50:22+08:00","publisher": {
             "@type": "Organization",
             "name": "KurehaTian"},"author": {
@@ -103,7 +103,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">KurehaTian</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E5%81%9A%E7%82%B9%E4%B8%9C%E8%A5%BF/"><i class="far fa-folder fa-fw"></i>做点东西</a>&nbsp;<a href="/categories/%E8%BD%AF%E4%BB%B6/"><i class="far fa-folder fa-fw"></i>软件</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 190 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 195 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -122,7 +122,7 @@
     <a href="#%e7%ae%80%e4%bb%8b" class="header-mark"></a>简介</h2><p>目前仍处于开发阶段(约10%)。最新内容参见develop分支。</p>
 <h2 id="计划内的更新" class="headerLink">
     <a href="#%e8%ae%a1%e5%88%92%e5%86%85%e7%9a%84%e6%9b%b4%e6%96%b0" class="header-mark"></a>计划内的更新</h2><pre tabindex="0"><code>    
-    片内外设：      定时器、PWM、ADC、SPI、CAN
+    片内外设：      PWM、ADC、SPI、CAN
 
     设备：          IMU、IPS/OLED/LCD、xTepper、直流有刷驱动、HMC5883罗盘、AHT10温湿度传感器、按键、SD卡
 
@@ -131,6 +131,7 @@
     <a href="#%e6%97%a5%e5%bf%97" class="header-mark"></a>日志</h2><blockquote>
 <p>[D][2023.4.1] GPIO部分完成。</p>
 <p>[D][2023.5.27] I2C部分完成。</p>
+<p>[D][2023.6.2] 定时器部分完成。</p>
 </blockquote>
 </div>
 
@@ -159,8 +160,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/xtepper-%E4%B8%80%E4%B8%AA%E9%AB%98%E9%9B%86%E6%88%90%E5%BA%A6%E7%9A%84%E9%97%AD%E7%8E%AF%E6%AD%A5%E8%BF%9B%E9%A9%B1%E5%8A%A8/" class="prev" rel="prev" title="xTepper - 一个高集成度的闭环步进驱动"><i class="fas fa-angle-left fa-fw"></i>xTepper - 一个高集成度的闭环步进驱动</a>
-            <a href="/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" class="next" rel="next" title="博世BSX-Lite快速上手">博世BSX-Lite快速上手<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/xtepper-%E4%B8%80%E4%B8%AA%E9%AB%98%E9%9B%86%E6%88%90%E5%BA%A6%E7%9A%84%E9%97%AD%E7%8E%AF%E6%AD%A5%E8%BF%9B%E9%A9%B1%E5%8A%A8/" class="prev" rel="prev" title="xTepper - 一个高集成度的闭环步进驱动"><i class="fas fa-angle-left fa-fw"></i>xTepper - 一个高集成度的闭环步进驱动</a></div>
 </div>
 </article></div>
         </main><footer class="footer">

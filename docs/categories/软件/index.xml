@@ -10,6 +10,6 @@
     <pubDate>Thu, 01 Jun 2023 00:50:22 &#43;0800</pubDate><author>
         <name>KurehaTian</name>
     </author><guid>http://example.org/posts/ayanami-sdk-ccs-%E9%80%82%E7%94%A8%E4%BA%8Etm4c123gh6pmi7%E7%9A%84%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</guid>
-    <description><![CDATA[地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： 定时器、PWM、ADC、SPI、CAN 设备]]></description>
+    <description><![CDATA[地址: https://github.com/KurehaTian/ayanami-sdk-ccs/tree/master 简介目前仍处于开发阶段(约10%)。最新内容参见develop分支。 计划内的更新 片内外设： PWM、ADC、SPI、CAN 设备： IMU]]></description>
 </item></channel>
 </rss>

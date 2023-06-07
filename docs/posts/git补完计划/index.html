@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Git 补完计划 - 资讯统合思念体终端</title><meta name="Description" content=""><meta property="og:title" content="Git 补完计划" />
+<meta property="og:description" content="Git补完计划 零、引言请读者善用浏览器的 索引目录 功能。 本文意在快速指导读者掌握使用Git进行版本控制与多机同步。 版本控制 在任务不同阶段，对项" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/git%E8%A1%A5%E5%AE%8C%E8%AE%A1%E5%88%92/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-01T00:50:22+08:00" />
+<meta property="article:modified_time" content="2022-02-01T00:50:22+08:00" /><meta property="og:site_name" content="资讯统合思念体终端" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git 补完计划"/>
+<meta name="twitter:description" content="Git补完计划 零、引言请读者善用浏览器的 索引目录 功能。 本文意在快速指导读者掌握使用Git进行版本控制与多机同步。 版本控制 在任务不同阶段，对项"/>
+<meta name="application-name" content="资讯统合思念体终端">
+<meta name="apple-mobile-web-app-title" content="资讯统合思念体终端">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/git%E8%A1%A5%E5%AE%8C%E8%AE%A1%E5%88%92/" /><link rel="next" href="http://example.org/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git 补完计划",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/git%E8%A1%A5%E5%AE%8C%E8%AE%A1%E5%88%92\/"
+        },"genre": "posts","keywords": "第三方工具","wordcount":  3772 ,
+        "url": "http:\/\/example.org\/posts\/git%E8%A1%A5%E5%AE%8C%E8%AE%A1%E5%88%92\/","datePublished": "2022-02-01T00:50:22+08:00","dateModified": "2022-02-01T00:50:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": "KurehaTian"},"author": {
+                "@type": "Person",
+                "name": "KurehaTian"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.2.0" defer type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="资讯统合思念体终端"><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/" title="分类！"> 分类 </a><a class="menu-item" href="/about/" title="关于我"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="资讯统合思念体终端"><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="分类！">分类</a><a class="menu-item" href="/about/" title="关于我">关于</a><a href="javascript:void(0);" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git 补完计划</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">KurehaTian</a>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-01">2022-02-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-02-01">2022-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3772 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#零引言">零、引言</a></li>
+    <li><a href="#一准备工作">一、准备工作</a>
+      <ul>
+        <li><a href="#1-安装git">1. 安装Git</a></li>
+        <li><a href="#2-注册gitee账号">2. 注册Gitee账号</a></li>
+        <li><a href="#3给账号添加数字签名">3.给账号添加数字签名</a></li>
+      </ul>
+    </li>
+    <li><a href="#二新建gitee项目库">二、新建Gitee项目库</a></li>
+    <li><a href="#三克隆gitee项目到本地">三、克隆Gitee项目到本地</a></li>
+    <li><a href="#四把你的工程扔到本地仓库里">四、把你的工程扔到本地仓库里</a>
+      <ul>
+        <li><a href="#1写一下readme">1.写一下Readme</a></li>
+        <li><a href="#2gitignore的配置">2.gitignore的配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#五将工作区内容保存至暂存区">五、将工作区内容保存至暂存区</a></li>
+    <li><a href="#六将暂存区的更新提交到仓库">六、将暂存区的更新提交到仓库</a></li>
+    <li><a href="#七把本地仓库推送到远程">七、把本地仓库推送到远程</a></li>
+    <li><a href="#八从远程仓库拉取最新版本">八、从远程仓库拉取最新版本</a></li>
+    <li><a href="#九版本回退">九、版本回退</a></li>
+    <li><a href="#十删除文件">十、删除文件</a></li>
+    <li><a href="#速查表">速查表</a>
+      <ul>
+        <li><a href="#暂存区操作">暂存区操作</a></li>
+        <li><a href="#本地仓库操作">本地仓库操作</a></li>
+        <li><a href="#远程仓库操作">远程仓库操作</a></li>
+        <li><a href="#工作流程">工作流程</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+                <div class="details-summary admonition-title">
+                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+                </div>
+                <div class="details-content">
+                    <div class="admonition-content">
+                        本文最后更新于 <span class="timeago" datetime="2022-02-01T00:50:22" title="February 1, 2022">2022-02-01</span>，文中内容可能已过时。</div>
+                </div>
+            </div><h1 id="git补完计划" class="headerLink">
+    <a href="#git%e8%a1%a5%e5%ae%8c%e8%ae%a1%e5%88%92" class="header-mark"></a>Git补完计划</h1><h2 id="零引言" class="headerLink">
+    <a href="#%e9%9b%b6%e5%bc%95%e8%a8%80" class="header-mark"></a>零、引言</h2><p>请读者善用浏览器的 <strong>索引目录</strong> 功能。</p>
+<p>本文意在快速指导读者掌握使用Git进行版本控制与多机同步。</p>
+<blockquote>
+<p>版本控制</p>
+<p>在任务不同阶段，对项目文件进行存档管理</p>
+<p>高技术力：使用Git进行更新维护，每次更新自动上传与上次不同的部分，随时可以回退</p>
+<p>低技术力：在钉钉群里打成一个一个压缩包，每次都要整个重新下载，版本切换要建立许多文件夹</p>
+<p>e.g.环岛未完善.zip、交流赛代码.zip、陀螺仪卡初始化.zip、环岛又好了啊啊啊啊啊.zip、加角速度环牛逼格拉斯.zip、全村的希望.zip、环岛又好了.zip [引自16届智能车某组]</p>
+</blockquote>
+<blockquote>
+<p>多机协同</p>
+<p>用两台或以上电脑写代码，在实验室写不完的带回宿舍在另一台电脑上继续写。</p>
+<p>高技术力：写之前从Git抓取最新版本，写完之后用Git推送</p>
+<p>低技术力：用U盘拷过来拷过去，用钉钉/QQ传，最后找不到改动了哪里</p>
+</blockquote>
+<p>此外，Git还能实现多人协同，分支管理等操作，限于篇幅在此不做讨论。</p>
+<pre tabindex="0"><code>参考文献：
+https://www.liaoxuefeng.com/wiki/896043488029600
+https://www.runoob.com/git/git-tutorial.html
+</code></pre><hr>
+<h2 id="一准备工作" class="headerLink">
+    <a href="#%e4%b8%80%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="header-mark"></a>一、准备工作</h2><h3 id="1-安装git" class="headerLink">
+    <a href="#1-%e5%ae%89%e8%a3%85git" class="header-mark"></a>1. 安装Git</h3><pre tabindex="0"><code>下载链接：https://git-scm.com/
+</code></pre><p>安装大体可以一路Next，默认编辑器选建议Vim，可以把Git添加到PATH</p>
+<p>安装完成后，在开始中找到 Git&gt;Git Bash，会蹦出一个类似于CMD命令行的窗口。</p>
+<p>在里面输入：</p>
+<pre tabindex="0"><code>git config --global user.name &#34;你的用户名&#34;
+git config --global user.email &#34;你的邮箱地址&#34;
+</code></pre><h3 id="2-注册gitee账号" class="headerLink">
+    <a href="#2-%e6%b3%a8%e5%86%8cgitee%e8%b4%a6%e5%8f%b7" class="header-mark"></a>2. 注册Gitee账号</h3><pre tabindex="0"><code>网址：https://gitee.com/
+</code></pre><p>相信这一步应该不用教吧。</p>
+<h3 id="3给账号添加数字签名" class="headerLink">
+    <a href="#3%e7%bb%99%e8%b4%a6%e5%8f%b7%e6%b7%bb%e5%8a%a0%e6%95%b0%e5%ad%97%e7%ad%be%e5%90%8d" class="header-mark"></a>3.给账号添加数字签名</h3><p>这一步是为了帮助远程托管平台确认本机身份。</p>
+<p>打开Git Bash,输入：</p>
+<pre tabindex="0"><code> ssh-keygen -t rsa -C &#34;你的邮箱&#34;
+</code></pre><p>中间会弹出一系列询问(2次)，直接按回车即可。</p>
+<p>去C:/Users/你的用户名/.ssh/里应该会看到</p>
+<blockquote>
+<p>id_rsa.pub</p>
+<p>id_rsa</p>
+</blockquote>
+<p>两个文件，分别是你的公钥和私钥，请务必不要泄露你的私钥。</p>
+<p>用记事本打开<em>id_rsa.pub</em>，复制里面的内容。</p>
+<p>在Gitee主页，右上角用户头像 -&gt; 菜单“修改资料”，然后选择“SSH公钥”，填写一个便于识别的标题，然后把用户主目录下的.ssh/id_rsa.pub文件的内容粘贴进去。</p>
+<p><em>如果你使用了多台电脑，那么每台电脑都需要添加数字签名</em></p>
+<blockquote>
+<p>这几个概念可能会引起混淆，在此进行解释。</p>
+<p>Git:用于进行管理的版本控制系统，在本地运行，也可以与托管平台进行联动</p>
+<p>Gitee/Github：Gitee是国内较大的一个代码托管平台，Github是全球使用人数较多的托管平台，但由于在境内没有服务器，所以访问速度较慢。</p>
+<p>打个不太恰当的比方，Git是你手里的手机，Gitee/Github就相当于中国联通/中国电信等运营商，你拿着手机当然可以自娱自乐，但你要接入运营商的网络才能与别人沟通或者在自己的多台手机之间传消息。</p>
+<p>而如果你只去运营商开通了号码拿到了卡，却没有手机，就自然没法通信了。不过你也可以用这个账号去打公用电话(直接在网页上下载上传,但失去便利性与网盘无异)</p>
+</blockquote>
+<hr>
+<h2 id="二新建gitee项目库" class="headerLink">
+    <a href="#%e4%ba%8c%e6%96%b0%e5%bb%bagitee%e9%a1%b9%e7%9b%ae%e5%ba%93" class="header-mark"></a>二、新建Gitee项目库</h2><p>登录gitee后,再直接访问Gitee的主页看到的页面是&quot;我的工作台&quot;。鼠标移至页面右上角的“+”后出现菜单，选择“新建仓库”。</p>
+<p>仓库名称随意起，不过鉴于以后经常会跟这个路径打交道，在此建议：</p>
+<blockquote>
+<p>1.不要太长，不然每次手敲这个名字的时候你会后悔的</p>
+<p>2.不要包含中文，否则以后可能某些软件会不兼容。</p>
+</blockquote>
+<p>写好仓库名称之后，路径会自动生成的。</p>
+<p>如果你不是想开源，让所有人都看到代码的话，就选择私有好了。</p>
+<p>建议下面的初始化仓库、设置模板、选择分支模型都打上勾：</p>
+<blockquote>
+<p>初始化仓库打勾即可，底下三个什么都不用选</p>
+<p>设置模板选择后底下选择Readme文件</p>
+<p>选择分支模型打勾后选择单分支模型(只创建Master分支)</p>
+</blockquote>
+<hr>
+<h2 id="三克隆gitee项目到本地" class="headerLink">
+    <a href="#%e4%b8%89%e5%85%8b%e9%9a%86gitee%e9%a1%b9%e7%9b%ae%e5%88%b0%e6%9c%ac%e5%9c%b0" class="header-mark"></a>三、克隆Gitee项目到本地</h2><p>还记得你在Gitee上新建的仓库吗？在他的主页里有一个显眼的“克隆/下载”按钮，点一下进去后选择&quot;SSH&quot;选项卡，然后把下面的链接复制下来。</p>
+<p>比如新建的就叫做</p>
+<blockquote>
+<p><a href="mailto:git@gitee.com" rel="">git@gitee.com</a>:kurehatian/general-drone-frame.git</p>
+</blockquote>
+<p>在你的硬盘上找一个风水宝地。</p>
+<p>比如说，我打算把一个叫做general-drone-frame的项目添加到G:\general-drone-frame  (这个文件夹就是项目文件夹),</p>
+<p>那么在“计算机”里面找到你要放项目的<strong>上一级目录</strong>。</p>
+<p>右键,选择&quot;Git Bash Here&quot;.熟悉的终端窗口又出现了。</p>
+<p>那么在Git Bash里输入：</p>
+<pre tabindex="0"><code>git clone 你的链接
+</code></pre><p>比如我的话就是</p>
+<pre tabindex="0"><code>git clone git@gitee.com:kurehatian/general-drone-frame.git
+</code></pre><p>他很快就会把项目里的文件夹下载到你本地，因为确实没有啥好下的。</p>
+<blockquote>
+<p>远程库与本地仓库并不是时时刻刻同步的，需要进行手动同步。</p>
+<p>又到了举例子时间：你在项目里所做的编辑相当于在草稿纸(工作区)上解题，把你不是很确定的答案先写在试卷(暂存区)上，检查之后把最终结果写在答题卡(本地仓库)上，最后要把答题卡交给老师(远程仓库)。</p>
+</blockquote>
+<hr>
+<h2 id="四把你的工程扔到本地仓库里" class="headerLink">
+    <a href="#%e5%9b%9b%e6%8a%8a%e4%bd%a0%e7%9a%84%e5%b7%a5%e7%a8%8b%e6%89%94%e5%88%b0%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93%e9%87%8c" class="header-mark"></a>四、把你的工程扔到本地仓库里</h2><p>拿到了空白的试卷和答题卡，你要开始解题了。</p>
+<p>对于我们已经有一个项目框架而言，要先把项目的基础部分跟本地仓库和远程仓库同步起来，这样版本管理器才能追踪你所做的更改。</p>
+<h3 id="1写一下readme" class="headerLink">
+    <a href="#1%e5%86%99%e4%b8%80%e4%b8%8breadme" class="header-mark"></a>1.写一下Readme</h3><p>把你的项目扔到刚才你从远程仓库抓取的空仓库里，然后可以根据需要编辑一下README.md,这是你从网页上访问你仓库的门面，可以美美的装饰一下。具体里面怎么写，可以去看看Markdown的写法。</p>
+<h3 id="2gitignore的配置" class="headerLink">
+    <a href="#2gitignore%e7%9a%84%e9%85%8d%e7%bd%ae" class="header-mark"></a>2.gitignore的配置</h3><p>.gitignore里面写你不想进行同步的文件，比如每次编译后obj文件夹里产生的一堆.o之类的过程性文件没有同步的必要，不仅会浪费大量网络流量、很快的把你并不是很多的空间容量占满，更会让你查看日志时找不到每次更新的重点。</p>
+<p>那么.gitignore要怎么写呢？</p>
+<p>还是以刚才的项目为例，假如现在的文件目录是这样的：</p>
+<pre tabindex="0"><code>G:\general-drone-frame\
+    |-RT1064
+    |   |-Project
+    |   |   |-MDK
+    |   |   |    |-Objects
+    |   |   |    |   |-这里面都是我不想更新的文件
+    ...其他文件先不用管，总之就是看这个Objects里的文件不顺眼。
+                
+</code></pre><p>那么我需要在.gitignore里写：</p>
+<pre tabindex="0"><code>RT1064/Project/MDK/Objects/
+</code></pre><p>表示这个文件夹里的所有文件不被同步。</p>
+<p>如果有使用VScode的同学，记得要把.vscode文件夹也加入.gitignore。</p>
+<p>如果还有其他不想同步的文件夹(比如测试数据等)，也可以直接往下继续写，从项目根目录开始的相对目录即可。</p>
+<p><strong>切记：如果一个文件/文件夹一旦被同步过，那么之后即使加入.gitignore也没有用了，所以哪些文件要被忽略一定要在一开始就确定好。</strong></p>
+<hr>
+<p><strong>如果你使用VScode写代码，其实是有一些可以不用自己手敲命令的手段的。具体操作可以参考这篇文章</strong></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_qian/article/details/107384191" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/qq_qian/article/details/107384191</a></p>
+</blockquote>
+<hr>
+<h2 id="五将工作区内容保存至暂存区" class="headerLink">
+    <a href="#%e4%ba%94%e5%b0%86%e5%b7%a5%e4%bd%9c%e5%8c%ba%e5%86%85%e5%ae%b9%e4%bf%9d%e5%ad%98%e8%87%b3%e6%9a%82%e5%ad%98%e5%8c%ba" class="header-mark"></a>五、将工作区内容保存至暂存区</h2><blockquote>
+<p>git add [文件名]</p>
+</blockquote>
+<p>通常为了避免遗忘某些更新了的文件不被同步，可以直接</p>
+<blockquote>
+<p>git add .</p>
+</blockquote>
+<p>来把所有发生了变化的文件添加到暂存区。</p>
+<p>如果你要将某个文件从暂存区移除，可以使用</p>
+<blockquote>
+<p>git rm &ndash;cached [文件名]</p>
+</blockquote>
+<p>如果要清除整个暂存区，可以使用</p>
+<blockquote>
+<p>rm .git/index</p>
+</blockquote>
+<hr>
+<h2 id="六将暂存区的更新提交到仓库" class="headerLink">
+    <a href="#%e5%85%ad%e5%b0%86%e6%9a%82%e5%ad%98%e5%8c%ba%e7%9a%84%e6%9b%b4%e6%96%b0%e6%8f%90%e4%ba%a4%e5%88%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>六、将暂存区的更新提交到仓库</h2><blockquote>
+<p>git commit -m &ldquo;引号里写本次提交的备忘，一定要这样写，不然还是会弹出来文本编辑器让你写的&rdquo;</p>
+</blockquote>
+<p>做到这一步的话就算是可以在本地实现版本管理了，实现版本控制已经足够了。如果还要做到多机协同的话，需要推送到远程仓库。</p>
+<hr>
+<h2 id="七把本地仓库推送到远程" class="headerLink">
+    <a href="#%e4%b8%83%e6%8a%8a%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93%e6%8e%a8%e9%80%81%e5%88%b0%e8%bf%9c%e7%a8%8b" class="header-mark"></a>七、把本地仓库推送到远程</h2><blockquote>
+<p>第一次推送时带上-u，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令</p>
+<p>git push -u origin master</p>
+<p>以后推送就是</p>
+<p>git push  origin master</p>
+</blockquote>
+<hr>
+<h2 id="八从远程仓库拉取最新版本" class="headerLink">
+    <a href="#%e5%85%ab%e4%bb%8e%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93%e6%8b%89%e5%8f%96%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac" class="header-mark"></a>八、从远程仓库拉取最新版本</h2><pre tabindex="0"><code>git pull origin master
+</code></pre><p>切记每次在与上次工作的电脑不同时一定要执行这一步，不然两个修改过的文件合并时可能会造成冲突。</p>
+<hr>
+<h2 id="九版本回退" class="headerLink">
+    <a href="#%e4%b9%9d%e7%89%88%e6%9c%ac%e5%9b%9e%e9%80%80" class="header-mark"></a>九、版本回退</h2><p>如果你这个版本写崩了，可以考虑退回以前的版本</p>
+<pre tabindex="0"><code>//退回前一个版本
+git reset --hard HEAD^
+
+//退回前两个版本
+git reset --hard HEAD^^
+
+//退回前10个版本
+git reset --hard HEAD~10
+</code></pre><hr>
+<h2 id="十删除文件" class="headerLink">
+    <a href="#%e5%8d%81%e5%88%a0%e9%99%a4%e6%96%87%e4%bb%b6" class="header-mark"></a>十、删除文件</h2><p>还记得上面的文件目录吗？这次我们要删除Project文件夹了。</p>
+<pre tabindex="0"><code>cd RT1064           //切换当前目录进入RT1064文件夹
+git rm -f Project   //删除Project文件夹
+cd ..               //切换到上一级文件夹，即G:\general-drone-frame
+</code></pre><p>这条指令也适用于删除单个文件</p>
+<p>具体用法请参考</p>
+<p><a href="https://www.runoob.com/git/git-rm.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/git/git-rm.html</a></p>
+<hr>
+<p>以上是基础内容的简介，下面给出便于日常使用的速查表。(适用于单分支情况)</p>
+<hr>
+<h2 id="速查表" class="headerLink">
+    <a href="#%e9%80%9f%e6%9f%a5%e8%a1%a8" class="header-mark"></a>速查表</h2><p>以下命令均在项目文件夹执行</p>
+<h3 id="暂存区操作" class="headerLink">
+    <a href="#%e6%9a%82%e5%ad%98%e5%8c%ba%e6%93%8d%e4%bd%9c" class="header-mark"></a>暂存区操作</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>把工作区的所有更改添加到暂存区</td>
+<td>git add .</td>
+</tr>
+<tr>
+<td>删除暂存区某个文件</td>
+<td>git rm &ndash;cached [文件名]</td>
+</tr>
+<tr>
+<td>清空暂存区</td>
+<td>rm .git/index</td>
+</tr>
+</tbody>
+</table>
+<h3 id="本地仓库操作" class="headerLink">
+    <a href="#%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93%e6%93%8d%e4%bd%9c" class="header-mark"></a>本地仓库操作</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>将暂存区更改提交到本地仓库</td>
+<td>git commit -m &ldquo;更新备注&rdquo;</td>
+</tr>
+<tr>
+<td>删除文件</td>
+<td>git rm</td>
+</tr>
+<tr>
+<td>退回前一个版本</td>
+<td>git reset &ndash;hard HEAD^</td>
+</tr>
+<tr>
+<td>退回前两个版本</td>
+<td>git reset &ndash;hard HEAD^^</td>
+</tr>
+<tr>
+<td>退回前10个版本</td>
+<td>git reset &ndash;hard HEAD~10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="远程仓库操作" class="headerLink">
+    <a href="#%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93%e6%93%8d%e4%bd%9c" class="header-mark"></a>远程仓库操作</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>从远程仓库拉取最新版本</td>
+<td>git pull origin master</td>
+</tr>
+<tr>
+<td>将当前本地仓库推送到远程仓库</td>
+<td>git push origin master</td>
+</tr>
+</tbody>
+</table>
+<h3 id="工作流程" class="headerLink">
+    <a href="#%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" class="header-mark"></a>工作流程</h3><blockquote>
+<p>云端备份：</p>
+<p>1.从远程仓库拉取最新代码： git pull origin master</p>
+<p>2.开始编辑代码(像往常一样)</p>
+<p>如果要删除文件的话，要在Git Bash 中使用git rm 来让版本管理系统知悉，否则远程仓库中对应文件不会被删除</p>
+<p>如果要回退到以前的版本，当前没有添加到暂存区的所有操作将会丢失。(添加到暂存区的也会:P)</p>
+<p>3.将所有更改添加到暂存区:  git add .</p>
+<p>4.将暂存区提交到本地仓库:  git commit -m &ldquo;备注&rdquo;</p>
+<p>5.将本地仓库推送到远程仓库: git push origin master</p>
+</blockquote>
+<blockquote>
+<p>仅本地用作版本管理：</p>
+<p>上述步骤的第2.到第4.步</p>
+</blockquote>
+<p><strong>所有命令的详细用法请参考https://www.runoob.com/git/git-basic-operations.html</strong></p>
+<p><strong>或者查看附件的手册</strong></p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果你觉得这篇文章对你有所帮助，欢迎赞赏~</em></p><a href="https://www.buymeacoffee.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>赞赏</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-02-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">第三方工具</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/%E5%8D%9A%E4%B8%96bsx-lite%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" class="next" rel="next" title="博世BSX-Lite快速上手">博世BSX-Lite快速上手<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">asdfg</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">KurehaTian</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"data":{"desktop-header-typeit":"资讯统合思念体终端","mobile-header-typeit":"资讯统合思念体终端"},"twemoji":true,"typeit":{"cursorChar":" |","cursorSpeed":800,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":30}};</script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js" defer></script><script type="text/javascript" src="/js/twemoji.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>
